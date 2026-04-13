@@ -55,6 +55,7 @@
 
     h2 {
       font-size: 26px;
+      margin-top: 50px;
       margin-bottom: 20px;
       border-bottom: 2px solid var(--bg-light);
       padding-bottom: 10px;
@@ -93,19 +94,36 @@
     }
 
     /* Cultural Tip Boxes */
+    .tip-box, .warning-box, .phrase-card {
+      padding: 20px;       
+      margin: 20px 0;      
+      border-radius: 8px;
+    }
+
+    .tip-box > *:first-child, 
+    .phrase-card > *:first-child {
+      margin-top: 0 !important;
+    }
+
+    .tip-box > *:last-child, 
+    .phrase-card > *:last-child {
+      margin-bottom: 0 !important;
+    }
+
     .tip-box {
       background: var(--accent-yellow);
       border-left: 4px solid #fab005;
-      padding: 20px;
-      margin: 30px 0;
-      border-radius: 4px;
     }
-
+    
     .phrase-card {
       background: var(--bg-light);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+    }
+
+    .tip-box h2 {
+      font-size: 22px;
+      border: none;
+      padding: 0;
+      margin-bottom: 10px;
     }
 
     /* App Promotion */
