@@ -3,111 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toilets in Japan – Quick Guide</title>
+  <title>Japan Toilet Guide – Find Restrooms Fast</title>
 
   <style>
+    :root {
+      --primary-color: #007aff;
+      --text-main: #2c3e50;
+      --text-muted: #666;
+      --bg-light: #f8f9fa;
+      --white: #ffffff;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      max-width: 720px;
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.7;
-      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      background-color: var(--white);
     }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+    /* Layout Containers */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    h2 {
-      margin-top: 40px;
+    /* Header & Nav */
+    header {
+      padding: 40px 0 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #e0f2ff 0%, #ffffff 100%);
+      border-bottom: 1px solid #eee;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    /* Blog Feed */
+    .section-title {
+      margin: 60px 0 30px 0;
+      font-size: 24px;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 15px;
+    }
+
+    .post-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: 24px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border-color: var(--primary-color);
+    }
+
+    .post-date {
+      font-size: 13px;
+      color: var(--primary-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .post-card h3 {
+      margin: 10px 0;
       font-size: 22px;
     }
 
-    p {
-      margin: 12px 0;
+    .post-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 16px;
     }
 
-    ul {
-      padding-left: 20px;
+    /* App Promotion Card */
+    .app-card {
+      background: #111;
+      color: white;
+      padding: 30px;
+      border-radius: 16px;
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
-    a {
-      color: #007aff;
+    .app-card h2 { margin-top: 0; }
+    .app-card p { color: #ccc; }
+
+    .btn {
+      background: var(--primary-color);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
       text-decoration: none;
+      font-weight: 600;
+      margin-top: 15px;
+      display: inline-block;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .card {
-      background: #f7f7f7;
-      padding: 16px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    .footer {
-      margin-top: 60px;
+    footer {
+      padding: 60px 0;
+      text-align: center;
       font-size: 14px;
-      color: #777;
+      color: #999;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
     }
   </style>
 </head>
 <body>
 
-  <h1>🚽 Toilets in Japan</h1>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">🚽 JapanToiletGuide</a>
+    </div>
+  </header>
 
-  <p>
-    Finding a toilet in Japan is usually easy — until you actually need one.
-    This site is a simple guide to help you find bathrooms quickly, especially in cities like Tokyo and Osaka.
-  </p>
+  <section class="hero">
+    <div class="container">
+      <h1>The ultimate guide to finding relief in Japan.</h1>
+      <p>
+        Whether you are exploring the neon lights of Shinjuku or the temples of Kyoto, 
+        knowing where the nearest clean restroom is can change your trip.
+      </p>
+    </div>
+  </section>
 
-  <div class="card">
-    <strong>💡 Tip:</strong> If you need something fast, skip the searching —
-    using a home screen widget that shows the nearest toilet instantly can save time.
-  </div>
+  <main class="container">
+    
+    <h2 class="section-title">Latest Articles</h2>
 
-  <h2>📍 Where to find toilets</h2>
-  <ul>
-    <li>Convenience stores (コンビニ)</li>
-    <li>Train and метро stations</li>
-    <li>Shopping malls and department stores</li>
-    <li>Parks and public facilities</li>
-  </ul>
+    <a href="/toilet-japan.html" class="post-card">
+      <span class="post-date">Essentials</span>
+      <h3>How to find a toilet in Japan</h3>
+      <p>A comprehensive list of places that always have public restrooms, from Konbinis to Depachikas.</p>
+    </a>
 
-  <h2>⚠️ Things to know</h2>
-  <ul>
-    <li>Some toilets close at night</li>
-    <li>Not all are free or easy to access</li>
-    <li>Public toilet data can be inconsistent</li>
-  </ul>
+    <a href="/osaka-toilets.html" class="post-card">
+      <span class="post-date">City Guide</span>
+      <h3>Where to find toilets in Osaka</h3>
+      <p>Osaka is crowded. Here are the secret spots in Namba and Umeda to find a quiet bathroom.</p>
+    </a>
 
-  <h2>📖 Guides</h2>
-  <ul>
-    <li><a href="/toilet-japan.html">How to find a toilet in Japan</a></li>
-    <li><a href="/osaka-toilets.html">Where to find toilets in Osaka</a></li>
-    <li><a href="/free-toilets.html">Are toilets free in Japan?</a></li>
-  </ul>
+    <a href="/free-toilets.html" class="post-card">
+      <span class="post-date">FAQ</span>
+      <h3>Are toilets free in Japan?</h3>
+      <p>Everything you need to know about costs, etiquette, and the famous washlet buttons.</p>
+    </a>
 
-  <h2>📱 Fastest option</h2>
-  <p>
-    If you’re in a hurry, I built a simple Android app called <strong>すぐトイレ (Sugu Toire)</strong>.
-    It shows the nearest toilet directly on your home screen with distance and walking time —
-    no need to open a map or search.
-  </p>
+    <!-- App Promotion -->
+    <div class="app-card">
+      <h2>Sugu Toire (すぐトイレ)</h2>
+      <p>Never search again. See the nearest toilet, distance, and walking time right on your home screen.</p>
+      <a href="#" class="btn">Get the Android Widget (Coming Soon)</a>
+    </div>
 
-  <p>
-    👉 <a href="#">View on Google Play (coming soon)</a>
-  </p>
+  </main>
 
-  <div class="footer">
-    <p>
-      Simple, practical info for travelers in Japan.
-    </p>
-  </div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Japan Toilet Guide. Made for travelers, by travelers.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
