@@ -24,7 +24,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.7;
+      line-height: 1.6;
       color: var(--text-main);
       margin: 0;
       background-color: var(--white);
@@ -33,11 +33,11 @@
     .container {
       max-width: 750px;
       margin: 0 auto;
-      padding: 0 24px; /* Slightly more side padding for mobile */
+      padding: 0 24px;
     }
 
     header {
-      padding: 20px 0; /* Increased from 15px */
+      padding: 15px 0;
       border-bottom: 1px solid #eee;
     }
 
@@ -52,7 +52,7 @@
     .hero-container {
       position: relative;
       width: 100%;
-      height: 400px;
+      height: 350px;
       overflow: hidden;
       background: #000;
     }
@@ -75,39 +75,58 @@
     }
 
     article {
-      padding: 60px 0 100px 0; /* Increased vertical breathing room */
+      padding: 30px 0 60px 0;
     }
 
-    h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.2; }
-    h2 { font-size: 28px; margin-top: 70px; color: var(--secondary-color); border-left: 5px solid var(--primary-color); padding-left: 20px; }
-    h3 { font-size: 22px; margin-top: 45px; color: var(--primary-color); }
+    h1 { font-size: clamp(28px, 5vw, 40px); margin-bottom: 10px; line-height: 1.2; }
+    
+    /* Section Titles - Tightened */
+    h2 { 
+      font-size: 26px; 
+      margin-top: 40px; 
+      margin-bottom: 15px; 
+      color: var(--secondary-color); 
+      border-left: 5px solid var(--primary-color); 
+      padding-left: 15px; 
+      line-height: 1.2;
+    }
+    
+    /* Subtitles - Tightened */
+    h3 { 
+      font-size: 21px; 
+      margin-top: 25px; 
+      margin-bottom: 10px; 
+      color: var(--primary-color); 
+      line-height: 1.2;
+    }
 
     .content-img {
       width: 100%;
-      height: 350px;
+      max-height: 400px;
       object-fit: cover;
-      border-radius: 16px;
-      margin: 35px 0; /* Increased margin */
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      margin: 15px 0 25px 0; /* Tightened top margin */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
     p {
-      margin-bottom: 25px;
+      margin: 0 0 16px 0; /* Consistent tight bottom margin */
     }
 
     ul {
-      margin-bottom: 30px;
+      margin: 0 0 20px 0;
+      padding-left: 20px;
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    /* Cards/Boxes */
+    /* Cards/Boxes - Tightened spacing */
     .tip-box, .warning-box, .phrase-card {
-      padding: 35px; /* Increased internal padding for better focus */
-      margin: 45px 0; /* Increased external margin */
-      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0; 
+      border-radius: 10px;
       font-size: 17px;
     }
 
@@ -119,11 +138,10 @@
     .app-card {
       background: linear-gradient(145deg, #2b2d42, #1a1a1a);
       color: #ffffff;
-      padding: 60px 40px; /* More generous padding */
-      border-radius: 24px;
-      margin-top: 80px;
+      padding: 40px 30px;
+      border-radius: 20px;
+      margin-top: 50px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
       border: 1px solid rgba(255,255,255,0.1);
     }
 
@@ -131,40 +149,46 @@
       color: #ffffff; 
       border: none; 
       padding: 0; 
-      margin: 0;
-      font-size: 32px;
+      margin: 0 0 10px 0;
+      font-size: 28px;
     }
 
     .app-card p {
       color: #f0f0f0; 
-      font-size: 19px;
+      font-size: 18px;
       max-width: 500px;
-      margin: 20px auto 30px auto; /* Better spacing around text */
+      margin: 0 auto 20px auto;
     }
 
     .btn {
       display: inline-block;
       background: #ff002b;
       color: white;
-      padding: 18px 40px; /* Larger button padding */
+      padding: 14px 35px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 18px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 0, 43, 0.3);
+      font-size: 17px;
+      transition: all 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 0, 43, 0.5);
+      transform: scale(1.03);
+      background: #ff2e51;
     }
 
     footer {
-      padding: 80px 0; /* More footer space */
+      padding: 50px 0;
       text-align: center;
       background: var(--bg-light);
       color: #777;
+      font-size: 14px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #eee;
+      margin: 40px 0;
     }
   </style>
 </head>
@@ -180,7 +204,7 @@
     <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200" alt="Clean Japanese bathroom" class="hero-image">
     <div class="hero-text">
         <h1>Toilet Etiquette in Japan</h1>
-        <p style="font-size: 20px; opacity: 0.9;">What Every Tourist Should Know</p>
+        <p style="font-size: 18px; opacity: 0.9; margin:0;">What Every Tourist Should Know</p>
     </div>
   </div>
 
@@ -198,6 +222,7 @@
         <img src="https://images.unsplash.com/photo-1718851972745-7287cd0b7807?auto=format&fit=crop&q=80&w=800" alt="Japanese Washlet Buttons" class="content-img">
 
         <p>These are the most common, especially in cities. Sit down as usual and flush with a button or lever. Many include “washlet” (bidet) functions, such as water sprays, heated seats, and air dryers.</p>
+        
         <div class="tip-box">
           <strong>💡 Tip:</strong> If you’re unsure, just use the basic flush — you don’t need to use any extra features.
         </div>
@@ -207,6 +232,7 @@
         <img src="https://images.pexels.com/photos/19882102/pexels-photo-19882102.jpeg?auto=format&fit=crop&q=80&w=800" alt="Japanese Washlet Buttons" class="content-img">
         
         <p>Less common, but still found in older buildings and some public places. To use: face the hood (front part), place your feet on the marked areas, and squat down.</p>
+        
         <div class="warning-box">
           <strong>⚠️ Important:</strong> Don’t stand on the toilet itself and hold your belongings securely.
         </div>
@@ -224,27 +250,29 @@
 
       <img src="https://images.unsplash.com/photo-1662308074084-8e2d73c353e6?auto=format&fit=crop&q=80&w=800" alt="Japanese Slippers" class="content-img">
 
-        <h3>👟 Slippers (Important!)</h3>
-        <p>In traditional locations like homes or some restaurants, you may see <strong>toilet slippers</strong>. Change into them before entering, and <strong>switch back</strong> when leaving. Don’t walk outside the toilet area wearing them!</p>
+      <h3>👟 Slippers (Important!)</h3>
+      <p>In traditional locations like homes or some restaurants, you may see <strong>toilet slippers</strong>. Change into them before entering, and <strong>switch back</strong> when leaving. Don’t walk outside the toilet area wearing them!</p>
 
-        <h2 style="border:none; margin-top:0; color: #c92a2a;">⚠️ Common Mistakes Tourists Make</h2>
-        <ul>
-          <li>❌ Not flushing toilet paper</li>
-          <li>❌ Standing incorrectly on squat toilets</li>
-          <li>❌ Pressing random washlet buttons (and panicking)</li>
-          <li>❌ Leaving the toilet messy</li>
-          <li>❌ Ignoring slippers in traditional places</li>
-        </ul>
+      <h2 style="border:none; margin-top:40px; color: #c92a2a; padding-left:0;">⚠️ Common Mistakes Tourists Make</h2>
+      <ul>
+        <li>❌ Not flushing toilet paper</li>
+        <li>❌ Standing incorrectly on squat toilets</li>
+        <li>❌ Pressing random washlet buttons (and panicking)</li>
+        <li>❌ Leaving the toilet messy</li>
+        <li>❌ Ignoring slippers in traditional places</li>
+      </ul>
 
       <h2>🌾 Rare Cases (Rural Areas)</h2>
       <p>In some countryside locations, you might encounter older toilets with no automatic flush. These are uncommon, especially in cities like Osaka.</p>
 
+      <div class="phrase-card">
         <h3>💡 Good to Know</h3>
         <ul>
           <li>Most public toilets in Japan are free.</li>
           <li>They’re usually clean and well-maintained.</li>
           <li>Toilet paper is almost always available.</li>
         </ul>
+      </div>
 
       <h2>What If You’re Not Sure?</h2>
       <p>If you’re ever unsure, follow what others do or look for icons. If you are worried about finding a toilet quickly, check out our other guides:</p>
@@ -255,7 +283,7 @@
 
       <div class="app-card">
         <h2>Never get lost searching.</h2>
-        <p><strong>Sugu Toire</strong> that shows the closest toilet with distance and walking time right on your home screen.</p>
+        <p><strong>Sugu Toire</strong> shows the closest toilet with distance and walking time right on your home screen.</p>
         <a href="#" class="btn">Get the Widget (Coming Soon)</a>
       </div>
 
@@ -264,7 +292,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Japan Toilet Guide. Made for travelers, by travelers.</p>
+      <p>&copy; 2026 Japan Toilet Guide. Made for travelers.</p>
     </div>
   </footer>
 
