@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>How to Ask for a Toilet in Japan (Useful Japanese Phrases)</title>
 
-  <meta name="description" content="Learn simple Japanese phrases to ask for a toilet in Japan. A helpful guide for tourists who don’t speak Japanese.">
-
-  <meta property="og:title" content="How to Ask for a Toilet in Japan">
-  <meta property="og:description" content="Useful Japanese phrases to help you find a bathroom quickly and politely in Japan.">
-  <meta property="og:type" content="article">
-
   <style>
     :root {
       --primary-color: #d90429;
@@ -98,7 +92,13 @@
 
     p { margin-bottom: 16px; }
 
-    /* Japanese Phrase Specifics */
+    /* Fix for excessive top padding in containers */
+    .phrase-card > *:first-child, 
+    .tip-box > *:first-child {
+      margin-top: 0 !important;
+    }
+
+    /* Japanese Phrase Style */
     .jp-text {
       display: block;
       font-size: 26px;
@@ -143,13 +143,6 @@
       border: none;
       padding: 0;
       margin: 0 0 10px 0;
-    }
-
-    .content-img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 10px 0 20px 0;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
     /* APP CARD */
@@ -199,7 +192,6 @@
   </header>
 
   <div class="hero-container">
-    <!-- Image: Japanese street sign pointing to amenities -->
     <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&q=80&w=1200" alt="Japanese signage" class="hero-image">
     <div class="hero-text">
         <h1>How to Ask for a Toilet in Japan</h1>
