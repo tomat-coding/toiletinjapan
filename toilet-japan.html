@@ -7,19 +7,22 @@
 
   <meta name="description" content="Learn where to find toilets in Japan, including convenience stores, stations, malls, and parks. A practical guide for tourists.">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="How to Find a Toilet in Japan">
-  <meta property="og:description" content="A practical guide to finding toilets in Japan quickly, including the best locations and tips.">
+  <meta property="og:description" content="A practical guide to finding toilets in Japan quickly.">
   <meta property="og:type" content="article">
 
   <style>
     :root {
-      --primary-color: #007aff;
-      --text-main: #2c3e50;
-      --text-muted: #666;
+      --primary-color: #d90429; /* Japan Red accent */
+      --secondary-color: #2b2d42;
+      --text-main: #2d3436;
+      --text-muted: #636e72;
       --bg-light: #f8f9fa;
       --white: #ffffff;
       --accent-yellow: #fff9db;
       --accent-red: #fff5f5;
+      --shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
     body {
@@ -31,15 +34,20 @@
       background-color: var(--white);
     }
 
+    /* Layout */
     .container {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     header {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .back-link {
@@ -47,93 +55,134 @@
       color: var(--primary-color);
       font-weight: 600;
       font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hero Section */
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 40px;
     }
 
     article {
-      padding: 40px 0 80px 0;
+      padding: 20px 0 80px 0;
     }
 
     h1 {
-      font-size: 36px;
-      line-height: 1.2;
-      margin-bottom: 20px;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+      color: var(--secondary-color);
+      letter-spacing: -1px;
     }
 
     h2 {
-      font-size: 26px;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--bg-light);
-      padding-bottom: 10px;
+      font-size: 28px;
+      margin-top: 60px;
+      margin-bottom: 25px;
+      color: var(--secondary-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     h3 {
-      font-size: 20px;
-      margin-top: 30px;
+      font-size: 22px;
+      margin-top: 40px;
       color: var(--primary-color);
     }
 
     p {
-      margin-bottom: 20px;
-      font-size: 18px;
+      margin-bottom: 25px;
+      font-size: 19px;
+      color: #444;
+    }
+
+    /* Images within content */
+    .content-img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: var(--shadow);
     }
 
     ul {
-      margin-bottom: 25px;
-      padding-left: 20px;
+      margin-bottom: 30px;
+      padding-left: 25px;
     }
 
     li {
-      margin-bottom: 8px;
-      font-size: 17px;
+      margin-bottom: 12px;
+      font-size: 18px;
     }
 
     /* Tip Boxes */
     .tip-box {
       background: var(--accent-yellow);
-      border-left: 4px solid #fab005;
-      padding: 20px;
-      margin: 30px 0;
-      border-radius: 4px;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 40px 0;
+      position: relative;
     }
 
     .warning-box {
       background: var(--accent-red);
-      border-left: 4px solid #ff6b6b;
-      padding: 20px;
-      margin: 30px 0;
-      border-radius: 4px;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 40px 0;
     }
 
-    /* App Promotion */
+    /* App Promotion Card */
     .app-card {
-      background: #111;
+      background: linear-gradient(135deg, #1e1e1e 0%, #000 100%);
       color: white;
-      padding: 30px;
-      border-radius: 16px;
-      margin-top: 60px;
+      padding: 40px;
+      border-radius: 24px;
+      margin-top: 80px;
       text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
-    .app-card h2 { border: none; margin-top: 0; color: white; }
+    .app-card h2 { 
+      border: none; 
+      margin-top: 0; 
+      color: white; 
+      justify-content: center;
+    }
     
     .btn {
       display: inline-block;
       background: var(--primary-color);
       color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 16px 32px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      margin-top: 15px;
+      font-weight: 700;
+      margin-top: 20px;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(217, 4, 41, 0.4);
     }
 
     footer {
-      padding: 40px 0;
+      padding: 60px 0;
       text-align: center;
-      font-size: 14px;
-      color: #999;
-      border-top: 1px solid #eee;
+      font-size: 15px;
+      color: #777;
+      background: var(--bg-light);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .hero-image { height: 250px; }
+      h1 { font-size: 32px; }
     }
   </style>
 </head>
@@ -145,6 +194,9 @@
     </div>
   </header>
 
+  <!-- Hero Image: A clean street in Japan -->
+  <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&q=80&w=1200" alt="Japanese street scene" class="hero-image">
+
   <main class="container">
     <article>
       <h1>How to Find a Toilet in Japan (2026 Guide)</h1>
@@ -153,10 +205,14 @@
         Finding a toilet in Japan is usually easy — but when you really need one, it can suddenly feel stressful. The good news: Japan has plenty of clean, accessible bathrooms. The trick is knowing where to look.
       </p>
 
-      <h2>📍 The Most Reliable Places to Find Toilets</h2>
+      <h2>📍 The Most Reliable Places</h2>
 
       <h3>🏪 Convenience Stores (コンビニ)</h3>
       <p>Convenience stores are one of the easiest options. Chains like:</p>
+      
+      <!-- Content Image: Conbini -->
+      <img src="https://images.unsplash.com/photo-1621360841013-c7683c659ec6?auto=format&fit=crop&q=80&w=800" alt="Japanese convenience store" class="content-img">
+
       <ul>
         <li>7-Eleven</li>
         <li>Lawson</li>
@@ -172,11 +228,15 @@
       </ul>
 
       <div class="tip-box">
-        <strong>💡 Tip:</strong> Buying a small item is polite, but not required. In some cases, staff may need to unlock the door.
+        <strong>💡 Pro Tip:</strong> Buying a small item (like a pack of gum or a drink) is polite, but not strictly required. In some crowded city centers, staff may need to unlock the door for you.
       </div>
 
       <h3>🚉 Train & Subway Stations</h3>
       <p>Major stations are one of the most reliable places. Examples include:</p>
+      
+      <!-- Content Image: Station -->
+      <img src="https://images.unsplash.com/photo-1555529733-0e670560f7e1?auto=format&fit=crop&q=80&w=800" alt="Train station in Japan" class="content-img">
+
       <ul>
         <li>Osaka Station</li>
         <li>Shin-Osaka Station</li>
@@ -206,7 +266,7 @@
       </ul>
 
       <div class="tip-box">
-        <strong>💡 Tip:</strong> “Depachika” (basement food halls) often have toilets nearby.
+        <strong>💡 Tip:</strong> “Depachika” (basement food halls) often have toilets nearby, usually hidden down a small hallway near the elevators.
       </div>
 
       <h3>🛍️ Shopping Malls & Electronics Stores</h3>
@@ -219,6 +279,10 @@
 
       <h3>🌳 Parks, Temples & Outdoor Areas</h3>
       <p>Public toilets are common in parks such as <strong>Utsubo Park, Osaka Castle Park,</strong> and <strong>Sumiyoshi Taisha</strong>.</p>
+
+      <!-- Content Image: Park/Temple -->
+      <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800" alt="Japanese temple park" class="content-img">
+
       <ul>
         <li>Usually near entrances</li>
         <li>Free and maintained regularly</li>
@@ -226,7 +290,7 @@
       </ul>
 
       <div class="warning-box">
-        <strong>⚠️ Warning:</strong> At night, some may be closed or less maintained.
+        <strong>⚠️ Warning:</strong> At night, some park facilities may be poorly lit or less maintained than those in stores.
       </div>
 
       <h3>🍔 Other Reliable Spots</h3>
@@ -239,10 +303,10 @@
 
       <h2>⚠️ Things to Keep in Mind</h2>
       <ul>
-        <li>Some toilets close at night</li>
-        <li>Not all are clearly visible from the street</li>
-        <li>“Public” doesn’t always mean easy access</li>
-        <li>English signage is common in cities, less so in rural areas</li>
+        <li>Some toilets close when the building closes at night.</li>
+        <li>Not all are clearly visible from the street—look for signs on building directories.</li>
+        <li>“Public” doesn’t always mean easy access; sometimes they are tucked away on higher floors.</li>
+        <li>English signage is common in cities, less so in rural areas.</li>
       </ul>
 
       <h2>⚡ Fastest Way (When It’s Urgent)</h2>
@@ -254,9 +318,11 @@
 
       <div class="app-card">
         <h2>Sugu Toire (すぐトイレ)</h2>
-        <p>I built an Android app that shows the closest toilet with distance and walking time right on your home screen—without even opening an app.</p>
+        <p>Never search in a panic again. I built an Android app that shows the closest toilet with distance and walking time right on your home screen—without even opening an app.</p>
         <a href="#" class="btn">Get the Widget (Coming Soon)</a>
       </div>
+
+      <hr style="margin: 60px 0; border: 0; border-top: 1px solid #eee;">
 
       <h2>🧭 Final Thoughts</h2>
       <p>
@@ -267,8 +333,8 @@
       <h2>Related Guides</h2>
       <p>Learn more about using and asking for toilets in Japan with these helpful guides.</p>
       <ul>
-        <li><a href="toilet-etiquette.html">Toilet Etiquette in Japan</a></li>
-        <li><a href="japanese-phrases.html">How to ask for a toilet in Japanese</a></li>
+        <li><a href="toilet-etiquette.html" style="color: var(--primary-color)">Toilet Etiquette in Japan</a></li>
+        <li><a href="japanese-phrases.html" style="color: var(--primary-color)">How to ask for a toilet in Japanese</a></li>
       </ul>
 
     </article>
