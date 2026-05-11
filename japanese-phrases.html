@@ -13,32 +13,30 @@
 
   <style>
     :root {
-      --primary-color: #007aff;
-      --text-main: #2c3e50;
-      --text-muted: #666;
+      --primary-color: #d90429;
+      --secondary-color: #2b2d42;
+      --text-main: #2d3436;
       --bg-light: #f8f9fa;
       --white: #ffffff;
       --accent-yellow: #fff9db;
-      --accent-blue: #e7f5ff;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Arial, sans-serif;
-      line-height: 1.8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+      line-height: 1.6;
       color: var(--text-main);
       margin: 0;
-      padding: 0;
       background-color: var(--white);
     }
 
     .container {
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     header {
-      padding: 20px 0;
+      padding: 15px 0;
       border-bottom: 1px solid #eee;
     }
 
@@ -49,118 +47,146 @@
       font-size: 14px;
     }
 
+    /* Hero Section */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      width: 90%;
+    }
+
     article {
-      padding: 40px 0 80px 0;
+      padding: 30px 0 60px 0;
     }
 
-    h1 {
-      font-size: 36px;
+    h1 { font-size: clamp(28px, 5vw, 40px); margin-bottom: 10px; line-height: 1.2; }
+    
+    h2 { 
+      font-size: 26px; 
+      margin-top: 40px; 
+      margin-bottom: 15px; 
+      color: var(--secondary-color); 
+      border-left: 5px solid var(--primary-color); 
+      padding-left: 15px;
       line-height: 1.2;
-      margin-bottom: 20px;
     }
 
-    h2 {
-      font-size: 26px;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--bg-light);
-      padding-bottom: 10px;
+    h3 { 
+      font-size: 21px; 
+      margin-top: 25px; 
+      margin-bottom: 10px; 
+      color: var(--primary-color); 
     }
 
-    h3 {
-      font-size: 20px;
-      margin-top: 30px;
-      color: var(--primary-color);
-    }
+    p { margin-bottom: 16px; }
 
-    p {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-
+    /* Japanese Phrase Specifics */
     .jp-text {
       display: block;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       color: #000;
-      margin: 10px 0;
-      line-height: 1.4;
+      margin: 5px 0;
+      line-height: 1.3;
     }
 
     .romaji {
-      color: var(--text-muted);
+      color: #636e72;
       font-style: italic;
       display: block;
       margin-bottom: 5px;
+      font-size: 16px;
     }
 
     .translation {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--primary-color);
+      font-size: 18px;
     }
 
-    /* Cultural Tip Boxes */
-    .tip-box, .warning-box, .phrase-card {
-      padding: 20px;       
-      margin: 20px 0;      
-      border-radius: 8px;
-    }
-
-    .tip-box > *:first-child, 
-    .phrase-card > *:first-child {
-      margin-top: 0 !important;
-    }
-
-    .tip-box > *:last-child, 
-    .phrase-card > *:last-child {
-      margin-bottom: 0 !important;
+    .phrase-card {
+      background: var(--bg-light);
+      padding: 25px;
+      margin: 15px 0 25px 0;
+      border-radius: 12px;
+      border: 1px solid #eee;
     }
 
     .tip-box {
       background: var(--accent-yellow);
-      border-left: 4px solid #fab005;
-    }
-    
-    .phrase-card {
-      background: var(--bg-light);
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 12px;
+      border: 1px solid #f1e4a0;
     }
 
     .tip-box h2 {
       font-size: 22px;
       border: none;
       padding: 0;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
     }
 
-    /* App Promotion */
+    .content-img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 10px 0 20px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    /* APP CARD */
     .app-card {
-      background: #111;
-      color: white;
-      padding: 30px;
-      border-radius: 16px;
-      margin-top: 60px;
+      background: linear-gradient(145deg, #2b2d42, #1a1a1a);
+      color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      margin-top: 50px;
       text-align: center;
     }
 
-    .app-card h2 { border: none; margin-top: 0; color: white; }
-    
+    .app-card h2 { color: #fff; border: none; margin: 0 0 10px 0; font-size: 28px; padding: 0; }
+    .app-card p { color: #f0f0f0; margin: 0 auto 20px auto; }
+
     .btn {
       display: inline-block;
-      background: var(--primary-color);
+      background: #ff002b;
       color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 14px 35px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      margin-top: 15px;
+      font-weight: 700;
+      transition: transform 0.2s;
     }
 
+    .btn:hover { transform: scale(1.03); }
+
+    ul { margin-bottom: 20px; padding-left: 20px; }
+    li { margin-bottom: 8px; }
+
     footer {
-      padding: 40px 0;
+      padding: 50px 0;
       text-align: center;
+      background: var(--bg-light);
+      color: #777;
       font-size: 14px;
-      color: #999;
-      border-top: 1px solid #eee;
     }
   </style>
 </head>
@@ -172,9 +198,17 @@
     </div>
   </header>
 
+  <div class="hero-container">
+    <!-- Image: Japanese street sign pointing to amenities -->
+    <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&q=80&w=1200" alt="Japanese signage" class="hero-image">
+    <div class="hero-text">
+        <h1>How to Ask for a Toilet in Japan</h1>
+        <p style="font-size: 18px; opacity: 0.9; margin:0;">Useful Japanese Phrases for Travelers</p>
+    </div>
+  </div>
+
   <main class="container">
     <article>
-      <h1>How to Ask for a Toilet in Japan (Useful Japanese Phrases)</h1>
       <p>
         Finding a toilet in Japan is usually easy — but asking for one can feel stressful if you don’t speak Japanese. The good news is that you only need a few simple phrases to get by. Even basic Japanese, combined with a polite tone, goes a long way.
       </p>
@@ -231,7 +265,7 @@
         <span class="jp-text">お手洗いをお借りしてもいいですか？</span>
         <span class="romaji">(Otearai o okari shite mo ii desu ka?)</span>
         <span class="translation">👉 “May I use your washroom?”</span>
-        <p>Literally means “borrow the washroom.” Very natural in Japanese culture.</p>
+        <p style="margin-top:10px; font-size: 16px;">Literally means “borrow the washroom.” Very natural in Japanese culture.</p>
       </div>
 
       <div class="phrase-card">
@@ -239,7 +273,7 @@
         <span class="jp-text">トイレをお借りできますか？</span>
         <span class="romaji">(Toire o okari dekimasu ka?)</span>
         <span class="translation">👉 “Can I borrow the toilet?”</span>
-        <p>Still polite and commonly understood.</p>
+        <p style="margin-top:10px; font-size: 16px;">Still polite and commonly understood.</p>
       </div>
 
       <h2>⚡ When It’s Urgent</h2>
@@ -251,7 +285,7 @@
       Soft, polite way to express urgency.</p>
 
       <p><strong>ちょっとお手洗い…</strong><br>
-      <span class="romaji">(Chotto otearai…)</span><br>
+      <span class="romaji">(Chotto otearai…)</span></p>
 
       <h2>💡 Extra Tips</h2>
       <ul>
@@ -262,7 +296,7 @@
 
       <div class="app-card">
         <h2>🚀 Fastest Option</h2>
-        <p>If you don’t want to ask at all, I built an Android app called <strong>Sugu Toire</strong>. It shows the closest toilet directly on your home screen with distance and walking time — no searching or speaking required.</p>
+        <p>If you don’t want to ask at all, <strong>Sugu Toire</strong> shows the closest toilet directly on your home screen with distance and walking time.</p>
         <a href="#" class="btn">Get the Widget (Coming Soon)</a>
       </div>
 
@@ -273,11 +307,10 @@
         You’ll be able to handle most situations without stress.
       </p>
 
-      <h2>What If You’re Not Sure</h2>
-      <p>If you’re ever unsure, follow what others do or look for icons. If you are worried about finding a toilet quickly, check out our other guides:</p>
+      <h2>Related Guides</h2>
       <ul>
-        <li><a href="toilet-japan.html">How to find toilets in Japan</a></li>
-        <li><a href="toilet-etiquette.html">Toilet Etiquette in Japan</a></li>
+        <li><a href="toilet-japan.html" style="color: var(--primary-color);">How to find toilets in Japan</a></li>
+        <li><a href="toilet-etiquette.html" style="color: var(--primary-color);">Toilet Etiquette in Japan</a></li>
       </ul>
       
     </article>
@@ -285,7 +318,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Japan Toilet Guide. Made for travelers, by travelers.</p>
+      <p>&copy; 2026 Japan Toilet Guide. Made for travelers.</p>
     </div>
   </footer>
 
