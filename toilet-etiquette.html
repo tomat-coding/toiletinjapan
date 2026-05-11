@@ -13,9 +13,9 @@
 
   <style>
     :root {
-      --primary-color: #007aff;
-      --text-main: #2c3e50;
-      --text-muted: #666;
+      --primary-color: #d90429;
+      --secondary-color: #2b2d42;
+      --text-main: #2d3436;
       --bg-light: #f8f9fa;
       --white: #ffffff;
       --accent-yellow: #fff9db;
@@ -23,22 +23,21 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.7;
       color: var(--text-main);
       margin: 0;
-      padding: 0;
       background-color: var(--white);
     }
 
     .container {
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     header {
-      padding: 20px 0;
+      padding: 15px 0;
       border-bottom: 1px solid #eee;
     }
 
@@ -49,106 +48,111 @@
       font-size: 14px;
     }
 
+    /* Hero Section */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      width: 90%;
+    }
+
     article {
       padding: 40px 0 80px 0;
     }
 
-    h1 {
-      font-size: 36px;
-      line-height: 1.2;
-      margin-bottom: 20px;
+    h1 { font-size: clamp(28px, 5vw, 42px); margin-bottom: 10px; line-height: 1.2; }
+    h2 { font-size: 28px; margin-top: 50px; color: var(--secondary-color); border-left: 5px solid var(--primary-color); padding-left: 15px; }
+    h3 { font-size: 22px; margin-top: 35px; color: var(--primary-color); }
+
+    .content-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 25px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      font-size: 26px;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--bg-light);
-      padding-bottom: 10px;
-    }
-
-    h3 {
-      font-size: 22px;
-      margin-top: 30px;
-      color: var(--primary-color);
-    }
-
-    p {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-
-    ul {
-      margin-bottom: 25px;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
+    /* Cards/Boxes */
+    .tip-box, .warning-box, .phrase-card {
+      padding: 25px;
+      margin: 35px 0;
+      border-radius: 12px;
       font-size: 17px;
     }
 
-    /* Spacing Fix for Boxes */
-    .tip-box, .warning-box, .phrase-card {
-      padding: 20px;
-      margin: 30px 0;
-      border-radius: 8px;
-    }
+    .tip-box { background: var(--accent-yellow); border: 1px solid #f1e4a0; }
+    .warning-box { background: var(--accent-red); border: 1px solid #ffc9c9; }
+    .phrase-card { background: var(--bg-light); border: 1px solid #eee; }
 
-    .tip-box > *:first-child, 
-    .warning-box > *:first-child, 
-    .phrase-card > *:first-child {
-      margin-top: 0 !important;
-    }
-
-    .tip-box > *:last-child, 
-    .warning-box > *:last-child, 
-    .phrase-card > *:last-child {
-      margin-bottom: 0 !important;
-    }
-
-    .tip-box {
-      background: var(--accent-yellow);
-      border-left: 4px solid #fab005;
-    }
-
-    .warning-box {
-      background: var(--accent-red);
-      border-left: 4px solid #ff6b6b;
-    }
-
-    .phrase-card {
-      background: var(--bg-light);
-    }
-
+    /* HIGH CONTRAST APP CARD */
     .app-card {
-      background: #111;
-      color: white;
-      padding: 30px;
-      border-radius: 16px;
+      background: linear-gradient(145deg, #2b2d42, #1a1a1a);
+      color: #ffffff;
+      padding: 45px 30px;
+      border-radius: 24px;
       margin-top: 60px;
       text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .app-card h2 { border: none; margin-top: 0; color: white; }
-    
+    .app-card h2 { 
+      color: #ffffff; 
+      border: none; 
+      padding: 0; 
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    .app-card p {
+      color: #f0f0f0; /* Brightened text */
+      font-size: 19px;
+      max-width: 500px;
+      margin: 15px auto 25px auto;
+    }
+
     .btn {
       display: inline-block;
-      background: var(--primary-color);
+      background: #ff002b;
       color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
+      padding: 16px 35px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      margin-top: 15px;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 0, 43, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 0, 43, 0.5);
     }
 
     footer {
-      padding: 40px 0;
+      padding: 60px 0;
       text-align: center;
-      font-size: 14px;
-      color: #999;
-      border-top: 1px solid #eee;
+      background: var(--bg-light);
+      color: #777;
     }
   </style>
 </head>
@@ -160,10 +164,17 @@
     </div>
   </header>
 
+  <div class="hero-container">
+    <!-- Image: Serene and clean Japanese bathroom aesthetic -->
+    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200" alt="Clean Japanese bathroom" class="hero-image">
+    <div class="hero-text">
+        <h1>Toilet Etiquette in Japan</h1>
+        <p style="font-size: 20px; opacity: 0.9;">What Every Tourist Should Know</p>
+    </div>
+  </div>
+
   <main class="container">
     <article>
-      <h1>Toilet Etiquette in Japan (What Tourists Should Know)</h1>
-
       <p>
         Japan is famous for its clean and high-tech toilets — but for first-time visitors, they can also be a bit confusing. The good news: toilet etiquette in Japan is simple once you know a few basic rules. Following them will help you avoid awkward situations and show respect in shared spaces.
       </p>
@@ -173,6 +184,10 @@
 
       <div class="phrase-card">
         <h3>🚿 Western-Style Toilets</h3>
+        
+        <!-- Image: High-tech Washlet Control Panel -->
+        <img src="https://images.unsplash.com/photo-1718851972745-7287cd0b7807?auto=format&fit=crop&q=80&w=800" alt="Japanese Washlet Buttons" class="content-img">
+
         <p>These are the most common, especially in cities. Sit down as usual and flush with a button or lever.</p>
         <p>Many include “washlet” (bidet) functions, such as water sprays, heated seats, and air dryers.</p>
         <div class="tip-box">
@@ -182,6 +197,9 @@
 
       <div class="phrase-card">
         <h3>🏯 Japanese-Style (Squat Toilets)</h3>
+
+        <img src="https://images.pexels.com/photos/19882102/pexels-photo-19882102.jpeg?auto=format&fit=crop&q=80&w=800" alt="Japanese Washlet Buttons" class="content-img">
+        
         <p>Less common, but still found in older buildings and some public places. To use: face the hood (front part), place your feet on the marked areas, and squat down.</p>
         <div class="warning-box">
           <strong>⚠️ Important:</strong> Don’t stand on the toilet itself and hold your belongings securely.
@@ -199,13 +217,16 @@
       <h3>🔇 Be Considerate of Others</h3>
       <p>Some toilets include a “sound” button (Otohime/Sound Princess) that plays a flushing noise for privacy. It’s commonly used, but completely optional.</p>
 
+      <!-- Image: Toilet Slippers -->
+      <img src="https://images.unsplash.com/photo-1662308074084-8e2d73c353e6?auto=format&fit=crop&q=80&w=800" alt="Japanese Slippers" class="content-img">
+
       <div class="tip-box">
         <h3>👟 Slippers (Important!)</h3>
         <p>In traditional locations like homes or some restaurants, you may see <strong>toilet slippers</strong>. Change into them before entering, and <strong>switch back</strong> when leaving. Don’t walk outside the toilet area wearing them!</p>
       </div>
 
       <div class="warning-box">
-        <h2>⚠️ Common Mistakes Tourists Make</h2>
+        <h2 style="border:none; margin-top:0; color: #c92a2a;">⚠️ Common Mistakes Tourists Make</h2>
         <ul>
           <li>❌ Not flushing toilet paper</li>
           <li>❌ Standing incorrectly on squat toilets</li>
@@ -230,13 +251,13 @@
       <h2>What If You’re Not Sure?</h2>
       <p>If you’re ever unsure, follow what others do or look for icons. If you are worried about finding a toilet quickly, check out our other guides:</p>
       <ul>
-        <li><a href="toilet-japan.html">How to find toilets in Japan</a></li>
-        <li><a href="japanese-phrases.html">How to ask for a toilet in Japanese</a></li>
+        <li><a href="toilet-japan.html" style="color: var(--primary-color);">How to find toilets in Japan</a></li>
+        <li><a href="japanese-phrases.html" style="color: var(--primary-color);">How to ask for a toilet in Japanese</a></li>
       </ul>
 
       <div class="app-card">
         <h2>Never get lost searching.</h2>
-        <p>I built an Android app called <strong>Sugu Toire</strong> that shows the closest toilet with distance and walking time right on your home screen.</p>
+        <p><strong>Sugu Toire</strong> that shows the closest toilet with distance and walking time right on your home screen.</p>
         <a href="#" class="btn">Get the Widget (Coming Soon)</a>
       </div>
 
