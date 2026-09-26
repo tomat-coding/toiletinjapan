@@ -34,60 +34,37 @@
   <meta name="twitter:image"
     content="https://images.unsplash.com/photo-1729914943036-a59070f388c0?auto=format&fit=crop&q=80&w=1200&h=630" />
 
+  <link rel="stylesheet" href="/styles.css">
   <style>
-    :root {
-      --primary-color: #4A90E2;
-      --secondary-color: #2b2d42;
-      --text-main: #2d3436;
-      --text-muted: #636e72;
-      --bg-light: #f8f9fa;
-      --white: #ffffff;
-      --accent-yellow: #fff9db;
-      --accent-red: #fff5f5;
-      --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-
+    /* This page has its own layout: sticky header, hero image without overlay, larger type. */
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.8;
-      color: var(--text-main);
-      margin: 0;
-      padding: 0;
-      background-color: var(--white);
     }
 
-    /* Layout */
     .container {
       max-width: 800px;
-      margin: 0 auto;
       padding: 0 20px;
     }
 
     header {
-      padding: 15px 0;
       background: white;
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border-bottom: none;
     }
 
     .back-link {
-      text-decoration: none;
-      color: var(--primary-color);
-      font-weight: 600;
-      font-size: 14px;
       display: flex;
       align-items: center;
     }
 
-    /* Hero Section */
     .hero-image {
-      width: 100%;
       height: 400px;
-      object-fit: cover;
       border-radius: 0 0 20px 20px;
       margin-bottom: 40px;
+      opacity: 1;
     }
 
     article {
@@ -106,31 +83,24 @@
       font-size: 28px;
       margin-top: 60px;
       margin-bottom: 25px;
-      color: var(--secondary-color);
       display: flex;
       align-items: center;
       gap: 10px;
+      border-left: none;
+      padding-left: 0;
+      line-height: inherit;
     }
 
     h3 {
       font-size: 22px;
       margin-top: 40px;
-      color: var(--primary-color);
+      margin-bottom: 1em;
     }
 
     p {
       margin-bottom: 25px;
       font-size: 19px;
       color: #444;
-    }
-
-    /* Images within content */
-    .content-img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin: 30px 0;
-      box-shadow: var(--shadow);
     }
 
     ul {
@@ -143,85 +113,47 @@
       font-size: 18px;
     }
 
-    /* Tip Boxes */
-    .tip-box {
-      background: var(--accent-yellow);
-      border-radius: 12px;
-      padding: 25px;
+    .content-img {
+      max-height: none;
+      object-fit: fill;
+      margin: 30px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .tip-box,
+    .warning-box {
+      border: none;
       margin: 40px 0;
+    }
+
+    .tip-box {
       position: relative;
     }
 
-    .warning-box {
-      background: var(--accent-red);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 40px 0;
-    }
-
-    /* App Promotion Card */
     .app-card {
-      background: linear-gradient(145deg, #2b2d42, #1a1a1a);
-      color: #ffffff;
-      /* Explicitly white */
       padding: 45px 30px;
       border-radius: 24px;
       margin-top: 60px;
-      text-align: center;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .app-card h2 {
-      color: #ffffff;
-      border: none;
-      padding: 0;
-      margin-top: 0;
+      margin: 0 0 25px 0;
       font-size: 32px;
       display: block;
     }
 
     .app-card p {
-      color: #f0f0f0;
-      /* Bright off-white */
       font-size: 19px;
       line-height: 1.6;
-      max-width: 500px;
       margin: 15px auto 25px auto;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #ff002b;
-      color: white;
-      padding: 14px 35px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 17px;
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.03);
-      background: #ff2e51;
-    }
-
-    .updated {
-      font-size: 14px;
-      color: #636e72;
-      margin: 0 0 20px 0;
     }
 
     footer {
       padding: 60px 0;
-      text-align: center;
       font-size: 15px;
-      color: #777;
-      background: var(--bg-light);
     }
 
-    /* Mobile adjustments */
     @media (max-width: 600px) {
       .hero-image {
         height: 250px;

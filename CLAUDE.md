@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A static, SEO-driven content site for **www.toiletinjapan.com** (see `CNAME`, so it's served by GitHub Pages from the repo root on `main`). The site is a set of travel guides about public toilets in Japan. It exists to funnel visitors to the **Sugu Toire** Android app (`com.tomat.sugutoire`) on Google Play.
 
-There is no build system, package manager, framework, linter or test suite. Every page is a single hand-written `.html` file with its CSS in an inline `<style>` block. Nothing is shared between files. Pushing to `main` deploys.
+There is no build system, package manager, framework, linter or test suite. Every page is a single hand-written `.html` file that links the shared `/styles.css`. Pushing to `main` deploys.
 
 To preview locally, run `python3 -m http.server 8000` in the repo root and open http://localhost:8000. Pages use root-relative favicon paths (`/favicon.ico`), so opening files directly with `file://` won't load the favicons.
 
@@ -24,7 +24,10 @@ To preview locally, run `python3 -m http.server 8000` in the repo root and open 
   - `Article`, with author "Tomasz Matusik", publisher "Sugu Toire" (logo at `/logo.png`), `image` set to the share image, and `dateModified`
   - `BreadcrumbList` (Home → article)
 - A visible `<p class="updated">Updated <time datetime="…">…</time></p>` sits at the top of each article. Keep it in sync with `dateModified` when content changes.
-- Styling is duplicated in each page. The same `:root` CSS variables (`--primary-color: #4A90E2`, `--secondary-color: #2b2d42`, etc.) and class names (`.container`, `.phrase-card`, `.tip-box`, `.jp-text`, `.romaji`, `.translation`, `.app-card`, `.btn`) are re-declared per file. A style change meant to be sitewide has to be made in every file.
+- **Styling:** `styles.css` holds the CSS variables, header/footer, `.btn`, and the article template (hero overlay, typography, `.tip-box`/`.warning-box`/`.phrase-card`, `.jp-text`/`.romaji`/`.translation`, `.app-card`). Make sitewide changes there.
+  - Article typography uses `:where(article) h2` etc., so it stays at element specificity and a page's plain `h2 {}` rule can still override it.
+  - Pages that differ keep a `<style>` block after the `<link>` with only their overrides: `index.html` (hub layout), `toilet-japan.html` (its own design: sticky header, hero without overlay, larger type) and `404.html`. The other articles have no inline CSS.
+  - When a page overrides a shared rule, it must also reset any shared properties it doesn't want (e.g. `border-bottom: none` on `header`).
 - Images are hotlinked from Unsplash (one from Pexels). Only favicons and `logo.png` are stored locally.
   - Always request an explicit crop (`fit=crop&w=…&h=…`) and put matching `width`/`height` attributes on the `<img>`.
   - Sizes: heroes 1200×600 with `fetchpriority="high"`; `.content-img` 800×533 with `loading="lazy"`; homepage `.post-thumb` 400×300 with `loading="lazy"`; `og:image`/`twitter:image` 1200×630.
@@ -34,7 +37,7 @@ To preview locally, run `python3 -m http.server 8000` in the repo root and open 
 ## Adding or renaming a page
 
 Several files have to be kept in sync by hand:
-1. Create the page from an existing article, e.g. `last-resort-toilet.html`. Update these to match the new filename/URL: `<title>`, meta description, `<link rel="canonical">`, `og:*`/`twitter:*` tags and JSON-LD (`headline`, `mainEntityOfPage.@id`, dates).
+1. Create the page from an existing template article, e.g. `last-resort-toilet.html`, which uses only `styles.css`. Update these to match the new filename/URL: `<title>`, meta description, `<link rel="canonical">`, `og:*`/`twitter:*` tags and JSON-LD (`headline`, `mainEntityOfPage.@id`, dates).
 2. Add a `.post-card` to `index.html`.
 3. Add a `<url>` entry to `sitemap.xml`.
 4. Add cross-links in the "Related Guides" lists of the other articles and in `404.html`.
