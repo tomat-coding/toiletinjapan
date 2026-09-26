@@ -90,6 +90,7 @@ footer {
   color: white;
   text-align: center;
   width: 90%;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-text h1 {
@@ -143,6 +144,35 @@ hr {
   font-size: 14px;
   color: var(--text-muted);
   margin: 0 0 20px 0;
+}
+
+.photo-credit {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: -12px 0 20px 0;
+}
+
+.photo-credit a {
+  color: var(--text-muted);
+}
+
+/* A content image with a caption or photo credit underneath */
+.photo {
+  margin: 15px 0 25px 0;
+}
+
+.photo .content-img {
+  margin: 0;
+}
+
+.photo figcaption {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.photo figcaption a {
+  color: var(--text-muted);
 }
 
 .content-img {

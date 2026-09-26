@@ -28,8 +28,8 @@ To preview locally, run `python3 -m http.server 8000` in the repo root and open 
   - Article typography uses `:where(article) h2` etc., so it stays at element specificity and a page's plain `h2 {}` rule can still override it.
   - Pages that differ keep a `<style>` block after the `<link>` with only their overrides: `index.html` (hub layout), `toilet-japan.html` (its own design: sticky header, hero without overlay, larger type) and `404.html`. The other articles have no inline CSS.
   - When a page overrides a shared rule, it must also reset any shared properties it doesn't want (e.g. `border-bottom: none` on `header`).
-- Most images are hotlinked from Unsplash (one from Pexels). Photos that aren't on Unsplash are cropped to the standard sizes and stored in `images/` as `<subject>-<w>x<h>.jpg`, e.g. the Wikimedia Commons photo used by `tokyo-toilet.html`.
-  - CC BY-SA photos need a visible `.photo-credit` line: author, a link to the source file, the license link, and "cropped" if the photo was cropped.
+- Images are either hotlinked from Unsplash, or photos from Wikimedia Commons stored in `images/` as `<subject>-<w>x<h>.jpg`, cropped to the standard sizes. Commons is the better source for photos that must really show Japan, e.g. a konbini, a washlet panel or a Shinkansen toilet.
+  - CC BY and CC BY-SA photos need a visible credit: author, a link to the source file, the license link, and "cropped" if the photo was cropped. Heroes get a `.photo-credit` line under the date. Content images go in `<figure class="photo">` with the credit in the `figcaption`. CC0 photos need no credit.
   - Always request an explicit crop (`fit=crop&w=…&h=…`) and put matching `width`/`height` attributes on the `<img>`.
   - Sizes: heroes 1200×600 with `fetchpriority="high"`; `.content-img` 800×533 with `loading="lazy"`; homepage `.post-thumb` 400×300 with `loading="lazy"`; `og:image`/`twitter:image` 1200×630.
   - Alt text should describe what the photo actually shows. Check the image rather than guessing from the surrounding text.
