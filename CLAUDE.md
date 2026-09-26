@@ -20,9 +20,15 @@ To preview locally, run `python3 -m http.server 8000` in the repo root and open 
   - an `.app-card` CTA with a `.btn` linking to the Play Store (`#ff002b` red pill button)
   - a "Related Guides" list
   - a footer
-- Article JSON-LD is `Article`, with author "Tomasz Matusik" and publisher "Sugu Toire" (logo at `/logo.png`).
+- Each article has two JSON-LD blocks:
+  - `Article`, with author "Tomasz Matusik", publisher "Sugu Toire" (logo at `/logo.png`), `image` set to the share image, and `dateModified`
+  - `BreadcrumbList` (Home → article)
+- A visible `<p class="updated">Updated <time datetime="…">…</time></p>` sits at the top of each article. Keep it in sync with `dateModified` when content changes.
 - Styling is duplicated in each page. The same `:root` CSS variables (`--primary-color: #4A90E2`, `--secondary-color: #2b2d42`, etc.) and class names (`.container`, `.phrase-card`, `.tip-box`, `.jp-text`, `.romaji`, `.translation`, `.app-card`, `.btn`) are re-declared per file. A style change meant to be sitewide has to be made in every file.
-- Images are hotlinked from Unsplash (`images.unsplash.com/...&w=1200` for heroes/OG, `&w=400` for thumbnails). Only favicons and `logo.png` are stored locally.
+- Images are hotlinked from Unsplash (one from Pexels). Only favicons and `logo.png` are stored locally.
+  - Always request an explicit crop (`fit=crop&w=…&h=…`) and put matching `width`/`height` attributes on the `<img>`.
+  - Sizes: heroes 1200×600 with `fetchpriority="high"`; `.content-img` 800×533 with `loading="lazy"`; homepage `.post-thumb` 400×300 with `loading="lazy"`; `og:image`/`twitter:image` 1200×630.
+  - Alt text should describe what the photo actually shows. Check the image rather than guessing from the surrounding text.
 - Japanese phrases use the pattern `.jp-text` (kana/kanji) → `.romaji` → `.translation`.
 
 ## Adding or renaming a page
