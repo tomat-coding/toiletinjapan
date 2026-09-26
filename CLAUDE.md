@@ -39,7 +39,7 @@ To preview locally, run `python3 -m http.server 8000` in the repo root and open 
 
 Several files have to be kept in sync by hand:
 1. Create the page from an existing template article, e.g. `last-resort-toilet.html`, which uses only `styles.css`. Update these to match the new filename/URL: `<title>`, meta description, `<link rel="canonical">`, `og:*`/`twitter:*` tags and JSON-LD (`headline`, `mainEntityOfPage.@id`, dates).
-2. Add a `.post-card` to `index.html`.
+2. Add a `.post-card` to `index.html`, under the right section: "Finding a Toilet", "Using Japanese Toilets" or "Phrases & Sightseeing".
 3. Add a `<url>` entry to `sitemap.xml`.
 4. Add cross-links in the "Related Guides" lists of the other articles and in `404.html`.
 5. Tag the page's Play Store link with its own campaign, so Play Console shows installs per page:
